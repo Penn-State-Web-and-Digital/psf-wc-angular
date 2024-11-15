@@ -87,10 +87,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css",
-              "node_modules/@psu-flex/wc-styles/dist/psf-styles.css"
-            ],
+            "styles": ["node_modules/@psu-flex/wc-styles/dist/psf-styles.css"],
             "scripts": []
           }
         }
