@@ -1,19 +1,13 @@
 <main class="main">
   <div class="content">
     <div class="left-side">
-      <psf-brand-bar />
-      <psf-header />
-      <div
-        class="mx-auto"
-        style="width: 60%; min-height: 100vh; margin-top: 80px"
-      >
-        <h1>
-          This is an example project to display federated React navigation
-          components converted to web components in an Angular project.
-        </h1>
+      <psu-brand-bar #brandBar></psu-brand-bar>
+      <psu-mega-menu-header #header></psu-mega-menu-header>
+      <div style="width: 60%; min-height: 100vh; margin-top: 80px; margin-left: auto; margin-right: auto;">
+        <h1>Penn State navigation web components running in Angular 20 with esbuild.</h1>
       </div>
-      <psf-footer />
-      <psf-brand-footer />
+      <psu-site-footer #footer></psu-site-footer>
+      <psu-brand-footer #brandFooter></psu-brand-footer>
     </div>
   </div>
 </main>

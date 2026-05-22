@@ -1,61 +1,49 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {
+  AfterViewInit,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FederatedDataService } from './federated-data.service';
-import { serializeObjects } from './utility';
+
+type PsuChromeElement = HTMLElement & { props?: unknown };
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HttpClientModule],
+  imports: [HttpClientModule],
   templateUrl: './app.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [FederatedDataService],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit {
   title = 'my-angular-app';
 
-  constructor(
-    private federatedDataService: FederatedDataService,
-    private el: ElementRef
-  ) {}
+  @ViewChild('brandBar') brandBar?: ElementRef<PsuChromeElement>;
+  @ViewChild('header') header?: ElementRef<PsuChromeElement>;
+  @ViewChild('footer') footer?: ElementRef<PsuChromeElement>;
+  @ViewChild('brandFooter') brandFooter?: ElementRef<PsuChromeElement>;
 
-  ngOnInit() {
+  constructor(private federatedDataService: FederatedDataService) {}
+
+  ngAfterViewInit() {
     this.federatedDataService.fetchFederatedData().subscribe((data) => {
-      const { brandFooter, brandBar, header, footer } = data;
-
-      // Serialize the data
-      const [
-        serializedBrandFooter,
-        serializedBrandBar,
-        serializedHeader,
-        serializedFooter,
-      ] = serializeObjects(
-        brandFooter.linkContentCollection.items,
-        brandBar,
-        header,
-        footer
-      );
-
-      // Map the data to element selectors
-      const elementDataMap = {
-        'psf-brand-footer': serializedBrandFooter,
-        'psf-brand-bar': serializedBrandBar,
-        'psf-header': serializedHeader,
-        'psf-footer': serializedFooter,
-      };
-
-      // Use a helper function to set attributes
-      this.setElementDataAttributes(elementDataMap);
-    });
-  }
-
-  private setElementDataAttributes(dataMap: { [selector: string]: string }) {
-    Object.keys(dataMap).forEach((selector) => {
-      const element = this.el.nativeElement.querySelector(selector);
-      if (element) {
-        element.setAttribute('data', dataMap[selector]);
+      if (this.brandBar?.nativeElement) {
+        this.brandBar.nativeElement.props = {
+          ...data.brandBar,
+          isExternal: true,
+        };
+      }
+      if (this.header?.nativeElement) {
+        this.header.nativeElement.props = data.header;
+      }
+      if (this.footer?.nativeElement) {
+        this.footer.nativeElement.props = data.footer;
+      }
+      if (this.brandFooter?.nativeElement) {
+        this.brandFooter.nativeElement.props = data.brandFooter;
       }
     });
   }
