@@ -21,7 +21,7 @@
     "@angular/router": "^20.0.0",
     "@angular/ssr": "^20.0.0",
     "@psu-flex/chrome-elements": "0.0.14",
-    "@psu-flex/core-ui-federated-wc": "1.4.5",
+    "@psu-flex/core-ui-federated-wc": "1.4.6",
     "@psu-flex/wc-styles": "1.1.2",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",

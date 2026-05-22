@@ -1332,19 +1332,19 @@
     "@parcel/watcher-win32-x64" "2.5.6"
 
 "@psu-flex/chrome-elements@*":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@psu-flex/chrome-elements/-/chrome-elements-0.0.15.tgz#833d4235dae6f6bdb1200214cb11ad03bd28930d"
-  integrity sha512-Tcyye1Bse6T3yHfzZd7C0MMN8BKxuaYX7yTBfIa2qUaFBfIZjFx4SekwN87jzhT08XWBMbAsAZcM/wdRgAiNjg==
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@psu-flex/chrome-elements/-/chrome-elements-0.0.16.tgz#7e0f1d1a857096ca9c1c51108071a3e3b7bbec28"
+  integrity sha512-eSiKrClLsXmDk0ah7YUt5NdcnfpB49PKXZZGXZeMqbkViuYEij0lg0u39HemRe+DrwlkNngmMX00e0fMaFVfqQ==
 
 "@psu-flex/chrome-elements@0.0.14":
   version "0.0.14"
   resolved "https://registry.yarnpkg.com/@psu-flex/chrome-elements/-/chrome-elements-0.0.14.tgz#8a351bdddf6d833515885d1034f99609a0fc9f13"
   integrity sha512-GaX0Ht0icmaB5hp06H+8E0tGc74htEhrovYPT6Iv1N3kSdaVjtIuX2qFCLFURJLmZszIhGPuvsqQp5EwNo3hCg==
 
-"@psu-flex/core-ui-federated-wc@1.4.5":
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/@psu-flex/core-ui-federated-wc/-/core-ui-federated-wc-1.4.5.tgz#26bb6f4908b4e553b56af659f554f0ef10af4615"
-  integrity sha512-DaPZWaubvIFIk8Ynau58/WAN9K8XsJU7k7VlYsSz3kbbC0Ut623UU3pfvIadErx/q3VXI9DVQYMIE/XtfeBeVw==
+"@psu-flex/core-ui-federated-wc@1.4.6":
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@psu-flex/core-ui-federated-wc/-/core-ui-federated-wc-1.4.6.tgz#4e61ad8c8e1ae47f6bdcfb5f599be82e974f8dfe"
+  integrity sha512-isoWBgXcmrWQWoLsaho2L4NJZosF/Mgjt2QTLeb3LbsK6QMgMHBb5UiKBIxvG2nE6lS32yxxFHPxMf92Q/HMOQ==
   dependencies:
     "@psu-flex/chrome-elements" "*"
 
